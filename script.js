@@ -2,11 +2,11 @@
 window.onload = function () {
         setInterval(executar, 1000 / 30);
 }
-        /*Foi deixado fora da função pois ao inicio do loop estava voltando a 
-          bola a sua posição inicial não deixando ela avançar.
-        */
+/*Foi deixado fora da função pois ao inicio do loop estava voltando a 
+  bola a sua posição inicial não deixando ela avançar.
+*/
 
-        var movimentoParaBaixoX = movimentoParaDireitaY = 5;
+var movimentoParaBaixoX = movimentoParaDireitaY = 5;
 
 function executar() {
 
@@ -45,6 +45,5 @@ function executar() {
 
         movimentoParaBaixoX = movimentoParaDireitaY + 1;
         movimentoParaDireitaY = movimentoParaBaixoX + 1;
-        
 
 };
