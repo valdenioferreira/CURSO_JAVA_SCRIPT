@@ -45,6 +45,5 @@ function executar() {
 
         movimentoParaBaixoX = movimentoParaDireitaY + 1;
         movimentoParaDireitaY = movimentoParaBaixoX + 1;
-
-        console.log("Olá");
+        
 };
