@@ -1,21 +1,33 @@
-var folhaDesenho = document.getElementById("papper");
+//Adicionando um intervalo de execução
+window.onload = function () {
+        setInterval(executar, 1000 / 30);
+}
+        /*Foi deixado fora da função pois ao inicio do loop estava voltando a 
+          bola a sua posição inicial não deixando ela avançar.
+        */
+
+        var movimentoParaBaixoX = movimentoParaDireitaY = 5;
+
+function executar() {
+
+        var folhaDesenho = document.getElementById("papper");
 
         //Quantidades de contexto no Canvas
         var areDesenho = folhaDesenho.getContext("2d");
 
         var larguraCampo = 600;
         var alturaCampo = 500;
-        var larguraLinha = 5;
-        var larguraBola = 5;
         var AlturaRaquete = 150;
+        var larguraLinha = larguraBola = 5;
+
 
         //Criando o retângulo
         areDesenho.fillStyle = '#000000';
         areDesenho.fillRect(0, 0, larguraCampo, alturaCampo);
-        
+
         //Dividindo o retângulo ao meio
         areDesenho.fillStyle = '#ffffff';
-        areDesenho.fillRect(larguraCampo/2 - larguraLinha/2, 0, larguraLinha, alturaCampo);
+        areDesenho.fillRect(larguraCampo / 2 - larguraLinha / 2, 0, larguraLinha, alturaCampo);
 
         //Primeiro adversário
         areDesenho.fillStyle = '#00ff00';
@@ -25,6 +37,14 @@ var folhaDesenho = document.getElementById("papper");
         areDesenho.fillStyle = '#00ff00';
         areDesenho.fillRect(0, 180, larguraLinha, AlturaRaquete)
 
-        //Criando a bola
+
+        //Dando cor a bola
         areDesenho.fillStyle = '#00ff00';
-        areDesenho.fillRect(30, 5, larguraLinha , larguraBola);
+        //Criando a bola
+        areDesenho.fillRect(movimentoParaDireitaY, movimentoParaBaixoX, larguraLinha, larguraBola);
+
+        movimentoParaBaixoX = movimentoParaDireitaY + 1;
+        movimentoParaDireitaY = movimentoParaBaixoX + 1;
+
+        console.log("Olá");
+};
