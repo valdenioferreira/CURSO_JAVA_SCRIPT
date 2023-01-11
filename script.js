@@ -23,6 +23,7 @@ var posicaoBolaX = (posicaoBolaY = 10);
 var velocidadeBolaPosicaoX = (velocidadeBolaPosicaoY = 5);
 var pontuacaoJogador1 = (pontuacaoJogador2 = 0);
 
+//Adicionando a função para a raquete seguir a posição do mause.
 folhaDesenho.addEventListener('mousemove', function (e) {
         posicaoJogador1 = e.clientY - alturaRaquete / 2 ;
 });
