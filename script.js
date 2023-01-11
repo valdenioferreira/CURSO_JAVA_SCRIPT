@@ -6,7 +6,10 @@ window.onload = function () {
   bola a sua posição inicial não deixando ela avançar.
 */
 
-var movimentoParaBaixoX = movimentoParaDireitaY = 5;
+var movimentoParaBaixoY = movimentoParaDireitaX = 5;
+
+var velocidadeBolaPosicaoX = 3; 
+var velocidadeBolaPosicaoY = 3;
 
 function executar() {
 
@@ -41,9 +44,19 @@ function executar() {
         //Dando cor a bola
         areDesenho.fillStyle = '#00ff00';
         //Criando a bola
-        areDesenho.fillRect(movimentoParaDireitaY, movimentoParaBaixoX, larguraLinha, larguraBola);
+        areDesenho.fillRect(movimentoParaDireitaX, movimentoParaBaixoY, larguraLinha, larguraBola);
 
-        movimentoParaBaixoX = movimentoParaDireitaY + 1;
-        movimentoParaDireitaY = movimentoParaBaixoX + 1;
+        movimentoParaBaixoY = movimentoParaBaixoY + velocidadeBolaPosicaoX;
+        movimentoParaDireitaX = movimentoParaDireitaX + velocidadeBolaPosicaoY;
+
+        if (movimentoParaBaixoY < 0 && velocidadeBolaPosicaoX < 0) {
+                velocidadeBolaPosicaoX = -velocidadeBolaPosicaoX;
+        }  
+        
+        if (movimentoParaBaixoY > alturaCampo && velocidadeBolaPosicaoX > 0) {
+                velocidadeBolaPosicaoX = -velocidadeBolaPosicaoX;
+        }
+
+
 
 };
